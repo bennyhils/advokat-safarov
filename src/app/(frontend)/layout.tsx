@@ -33,6 +33,14 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s — ${settings.siteName}`,
     },
     description: settings.seoDescription || undefined,
+    openGraph: {
+      type: 'website',
+      locale: 'ru_RU',
+      siteName: settings.siteName,
+      title: settings.seoTitle || settings.siteName,
+      description: settings.seoDescription || undefined,
+      images: [{ url: '/safarov.jpg', width: 800, height: 800, alt: settings.lawyerName || settings.siteName }],
+    },
   }
 }
 
