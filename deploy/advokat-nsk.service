@@ -1,0 +1,16 @@
+[Unit]
+Description=Сайт адвоката Сафарова
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/advokat-nsk
+Environment=NODE_ENV=production
+EnvironmentFile=/var/www/advokat-nsk/.env
+ExecStart=/usr/bin/npm run start
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
